@@ -29,9 +29,10 @@ export default class CreateExercise extends Component {
                 if (res.data.length > 0) {
                     this.setState({
                         users: res.data.map(user => user.username),
-                        ser: res.data[0].username
+                        user: res.data[0].username
                     })
-                }});
+                }})
+            .catch(err => console.log('Error: ' + err));
     }
 
     onChangeUsername(e) {
